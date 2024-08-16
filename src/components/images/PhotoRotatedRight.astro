@@ -4,21 +4,24 @@ interface Props {
     imageUrl: string;
     alt: string;
 }
-import Image from './Image.astro';
+//import Image from './Image.astro';
+import PhotoMontaña from './PhotoMontaña.astro';
+import Pincho from './Pincho.astro';
+import Ramita from './Ramita.astro';
 const {rotate, imageUrl, alt} = Astro.props;
 ---
 <div class="container">
     <div class="adornos">
         <div class="pushpin overlay">
-            <Image imageUrl='../../../public/adornos/pushpin-svgrepo-com.png' alt='pushpin' />
+            <Pincho/>
         </div>
         <div class="ramitas overlay">
-            <Image imageUrl='../../../public/adornos/ramita-amarilla.webp' alt='ramita-amarilla' />
+            <Ramita/>
         </div>
         
     </div>
     <div class="photo">
-        <Image imageUrl={imageUrl} alt={alt} />
+        <PhotoMontaña />
     </div>
 </div>
 <style>

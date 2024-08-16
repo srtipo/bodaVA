@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import localBirdImage from '../../images/foto en la montaña.webp';
+---
+<Image src={localBirdImage} alt="Un pájaro sentado sobre un nido de huevos."/>
+
+<style>
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
