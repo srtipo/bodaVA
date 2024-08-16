@@ -2,16 +2,13 @@
 import Title from '../Title.astro';
 import PhotoCard from '../images/PhotoCard.astro';
 ---
-<div class = "container">
+<div class = "container" style={{ background: 'var(--primary-color)' }}>
     <Title title="!!Nos casamos!!"/>
     <div class =inside>
         <PhotoCard	/>
     </div>
 </div>
 <style>
-    div.container {
-        background: #f08329;
-    }
     .inside {
         display: flex;
         justify-content: center;
