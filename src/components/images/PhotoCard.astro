@@ -1,0 +1,43 @@
+---
+import PhotoRotatedLeft from "./PhotoRotatedLeft.astro";
+import PhotoRotatedRight from "./PhotoRotatedRight.astro";
+
+
+---
+	<div>
+    <div class = "top">
+      <PhotoRotatedRight imageUrl="../../public/foto en la montaña.webp" alt="Foto en montaña" rotate="-20deg" /> 	
+    </div>
+    <div class = "middle">
+      <PhotoRotatedLeft imageUrl="../../public/foto en la montaña.webp" alt="Foto en montaña" rotate="-20deg" /> 	
+    </div>
+    <div class = "bottom">
+      <PhotoRotatedRight imageUrl="../../public/foto en la montaña.webp" alt="Foto en montaña" rotate="-20deg" /> 	
+    </div>
+  </div>
+	
+
+<style>
+  
+    div {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-inline: 50%;
+
+    }
+    .top {
+        margin-bottom: -15%;
+    }
+
+    .bottom {
+        margin-top: -15%;
+    }
+
+</style>

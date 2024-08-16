@@ -1,0 +1,69 @@
+---
+interface Props {
+	rotate:string;
+    imageUrl: string;
+    alt: string;
+}
+import Image from './Image.astro';
+const {rotate, imageUrl, alt} = Astro.props;
+---
+<div class="container">
+    <div class="adornos">
+        <div class="pushpin overlay">
+            <Image imageUrl='../../../public/adornos/pushpin-svgrepo-com.png' alt='pushpin' />
+        </div>
+        <div class="ramitas overlay">
+            <Image imageUrl='../../../public/adornos/ramita-amarilla.webp' alt='ramita-amarilla' />
+        </div>
+        
+    </div>
+    <div class="photo">
+        <Image imageUrl={imageUrl} alt={alt} />
+    </div>
+</div>
+<style>
+   div.photo {
+        display: flex;
+        
+        justify-content: center;
+        align-items: center;
+
+        padding: 10px;
+        background-color: aliceblue;
+    }
+    .adornos {
+        width: 100%;
+        display: flex;
+        gap: 65%;
+        position: absolute;
+        z-index: 1;
+        
+
+    }
+    .ramitas {
+        top: 0px;
+        left: 0px;
+        width: 30%;
+        height: 30%;
+        display: flex;
+        z-index: 1;
+        transform: scaleX(-1);
+        
+
+    }
+    .pushpin {
+        top: 0px;
+        left: 0px;
+        width: 20%;
+        height: 20%;
+        display: flex;
+        z-index: 1;
+        rotate: -90deg;
+    }
+    .overlay {
+
+    }
+    .container {
+        rotate: 10deg;
+    }
+</style>
