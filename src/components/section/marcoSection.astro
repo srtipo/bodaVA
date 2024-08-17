@@ -1,15 +1,20 @@
 ---
 import CircleMarco from "../marco/circleMarco.astro"
+import Button from "../basics/button.astro";
 import '@fontsource/grey-qo';
 import '@fontsource-variable/dancing-script';
 import '@fontsource/pacifico';
 import '@fontsource/sacramento';
 ---
 <div class = "container" style={{ background: 'var(--secondary-color)' }}>
+    
     <div class =inside>
         <h3>  ¡Nos Casamos!</h3>
         <div class="CircleMarco">
             <CircleMarco />
+        </div>
+        <div class="button">
+            <Button>Aceptar Invitación</Button>
         </div>
     </div>
     
@@ -17,6 +22,9 @@ import '@fontsource/sacramento';
 
 <style>
     .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 2%;
     }
     h3 { 
@@ -28,12 +36,16 @@ import '@fontsource/sacramento';
     .inside {
         display: grid;
         align-items: center;
+        width: 50%;
     }
     .CircleMarco {
         margin-inline: auto;
-        width: 40%;
         padding: 0%;
 
+    }
+    .button {
+        margin-inline: auto;
+        margin-top: -60%;
     }
     .prueba-1 {
         font-family: 'sacramento', cursive;
