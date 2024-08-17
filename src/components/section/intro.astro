@@ -2,7 +2,7 @@
 import Title from '../Title.astro';
 import PhotoCard from '../images/PhotoCard.astro';
 ---
-<div class = "container" style={{ background: 'var(--primary-color)' }}>
+<div class = "container" >
     <Title title="Boda Victor y Andrea" />
     <div class =inside>
         <PhotoCard	/>
@@ -11,8 +11,11 @@ import PhotoCard from '../images/PhotoCard.astro';
 <style>
     .container {
         padding: 2%;
+        background: rgb(244,125,66);
+        background: linear-gradient(180deg, rgba(244,125,66,1) 0%, rgba(189,189,189,1) 100%);
     }
     .inside {
+        
         display: flex;
         justify-content: center;
         align-items: center;
