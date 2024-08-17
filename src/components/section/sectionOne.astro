@@ -18,15 +18,17 @@ import PhotoCard from '../images/PhotoCard.astro';
     .sectionOne {
         /*display grid 3 column*/ 
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         padding: 2%;
         background: var(--primary-color);
-        background: linear-gradient(180deg, var(--primary-color) 50%, var(--secondary-color) 100%);
-        height: auto
+        background: linear-gradient(180deg, var(--primary-color) 80%, var(--secondary-color) 100%);
+        height: auto;
+        padding-bottom: 10%;
     }
     .center {
         margin-inline: auto;
         padding: 5%;
+        grid-column: 2 / 5;s
     }
 
 

@@ -24,11 +24,12 @@ import CircleMarco from "../marco/circleMarco.astro";
 <style>
     .sectiontwo {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         padding: 2%;
         background:var(--secondary-color);
-        background: linear-gradient(180deg, var(--secondary-color) 40%,#c5b4ab 65% , rgba(244,125,66,1) 100%);
-        height: auto
+        background: linear-gradient(180deg, var(--secondary-color) 80%, rgba(244,125,66,1) 100%);
+        height: auto;
+        margin-bottom: 10%;
     }
     h3 { 
 
@@ -41,6 +42,12 @@ import CircleMarco from "../marco/circleMarco.astro";
         justify-content: center;
         align-items: center;
         transform: translateY(-150%);
+
+    }
+    .center {
+        margin-inline: auto;
+        padding: 5%;
+        grid-column: 2 / 5;
     }
 
 </style>
