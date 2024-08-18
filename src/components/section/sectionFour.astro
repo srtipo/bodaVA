@@ -1,9 +1,28 @@
 ---
+import WeddingEvent from "../events/weddingEvent.astro"
 ---
 <div class = "sectionFour" >
+    <div></div>
+    <div>
+        <h2>Eventos</h2>
+        <WeddingEvent description="Boda Civil" place="Jefatura de Chacao" date="Viernes 11 de Octubre 10:00AM">
+        </WeddingEvent>
+        <WeddingEvent  description="Consejos Matrimoniales" place="Salón del Reino UD5" date="Sabado 13 de Octubre 5:30PM">
 
+        </WeddingEvent>
+        <WeddingEvent  description="Recepción" place="Salon de Fiesta Bloque 61" date="Sabado 13 de Octubre 6:00PM">
+
+        </WeddingEvent>  
+    </div>
+    <div></div>
 </div>
+
 <style>
+    h2 {
+
+        text-align: center;
+        color: var(--primary-color);
+    }
     .sectionFour {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -11,6 +30,11 @@
         background:var(--secondary-color);
         background: linear-gradient(180deg, var(--secondary-color) 100%, var(--primary-color) 0%);
         height: auto
+    }
+    p {
+        text-align: center;
+        color: var(--primary-color);
+        margin-block: 1%;
     }
 
 </style>

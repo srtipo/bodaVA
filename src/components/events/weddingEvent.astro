@@ -1,0 +1,41 @@
+---
+import Button from "../basics/button.astro"
+interface Props {
+    description: string;
+    place: string;
+    date: string;
+}
+const { description, place, date } = Astro.props;
+---
+<div class = "weddingEvent">
+    <div class = "weddingEventText">
+        <p><strong>{description}</strong> </p>
+        <p><strong>Lugar: </strong> {place}</p>
+        <p><strong>Dia y Hora: </strong> {date}</p>
+    </div>
+    <div class = "weddingEventButton">
+        <Button>Ver Ubicación</Button>
+    </div>
+</div>
+<style>
+.weddingEventText {
+    text-align: center;
+    color: var(--primary-color);
+
+}
+p {
+    text-align: center;
+    margin-block: 3%;
+    line-height: 1.5em; 
+    display: grid;
+    grid-column: 2 / 5;
+}
+.weddingEvent {
+    margin-bottom: 25%;
+
+}
+/* center button on grid */ 
+.weddingEventButton {
+    display: grid;
+    grid-column: 2 / 5;
+}
