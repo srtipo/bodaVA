@@ -9,7 +9,7 @@ const { description, place, date } = Astro.props;
 ---
 <div class = "weddingEvent">
     <div class = "weddingEventText">
-        <p><strong>{description}</strong> </p>
+        <p ><strong>{description}</strong> </p>
         <p><strong>Lugar: </strong> {place}</p>
         <p><strong>Dia y Hora: </strong> {date}</p>
     </div>
@@ -20,7 +20,6 @@ const { description, place, date } = Astro.props;
 <style>
 .weddingEventText {
     text-align: center;
-    color: var(--primary-color);
 
 }
 p {
@@ -29,10 +28,14 @@ p {
     line-height: 1.5em; 
     display: grid;
     grid-column: 2 / 5;
+    color: var(--dark-color);
 }
 .weddingEvent {
     margin-bottom: 25%;
 
+}
+strong {
+    color: var(--primary-color);
 }
 /* center button on grid */ 
 .weddingEventButton {
