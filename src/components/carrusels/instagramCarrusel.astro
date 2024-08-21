@@ -1,0 +1,63 @@
+---
+import PhotoRotatedLeft from "../images/PhotoRotatedLeft.astro";
+import PhotoRotatedRight from "../images/PhotoRotatedRight.astro";
+import { Image } from 'astro:assets';
+import localBirdImage from '../../images/foto en la montaña.webp';
+import localBirdImage2 from '../../images/adornos/pushpin-svgrepo-com.png';
+
+const { title } = Astro.props;
+---
+
+<div class="carrusel">
+    <div class="slide"> <Image src={localBirdImage} alt="Un pájaro sentado sobre un nido de huevos."/></div>
+    <div class="slide"> <Image src={localBirdImage2} alt="Un pájaro sentado sobre un nido de huevos."/></div>
+    <div class="slide"> <Image src={localBirdImage} alt="Un pájaro sentado sobre un nido de huevos."/></div>
+    <div class="slide"> <Image src={localBirdImage} alt="Un pájaro sentado sobre un nido de huevos."/></div>
+    <div class="slide"> <Image src={localBirdImage} alt="Un pájaro sentado sobre un nido de huevos."/></div>
+    <div class="slide"> <Image src={localBirdImage2} alt="Un pájaro sentado sobre un nido de huevos."/></div>
+    <div class="slide"> <Image src={localBirdImage} alt="Un pájaro sentado sobre un nido de huevos."/></div>
+    <div class="slide"> <Image src={localBirdImage} alt="Un pájaro sentado sobre un nido de huevos."/></div>
+  </div>
+<div>
+
+
+<style>.carrusel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .slide {
+    flex: 0 0 auto;
+    width: 50%;
+    height: 50%;
+    padding-inline: 1%;
+    
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: carrusel-slide 30s linear infinite;
+  }
+
+  
+  @keyframes carrusel-slide {
+    0% {
+    transform: translateX(0%);
+  }
+
+  95% {
+    transform: translateX(-650%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+
+
+</style>

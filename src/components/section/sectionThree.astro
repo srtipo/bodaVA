@@ -1,36 +1,33 @@
 ---
 import Title from '../Title.astro';
 import PhotoCard from '../images/PhotoCard.astro';
+import InstagramCarrusel from '../carrusels/instagramCarrusel.astro';
 ---
 <div class = "sectiontrhee" >
-    <div class ="left">
-    </div>
-    <div class ="center">
-        
-        <PhotoCard	/>
-    </div>
-    <div class ="right">
 
+
+    <div class ="center">
+        <h2> Nuestras Fotos </h2>
+        <InstagramCarrusel	/>
     </div>
+
 
 </div>
 <style>
-    .sectiontrhee {
-        /*display grid 3 column*/ 
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        padding: 2%;
-        background: var(--primary-color);
-        background: linear-gradient(180deg, var(--primary-color) 80%, var(--secondary-color) 100%);
-        height: auto;
-        padding-bottom: 10%;
+    h2 {
+        text-align: center;
+        grid-column: 1 / 6;
+        color: var(--secondary-color);
+        text-shadow: 1px 1px 1px rgb(85, 84, 84);
+        margin-block:1%;
     }
-    .center {
-        
-        grid-column: 2 / 5;
-        margin-inline: auto;
-        padding: 5%;
-    }
+.sectiontrhee {
+align-items: center;
+justify-content: center;
 
-
+}
+.center {
+position: relative;
+  padding: 5%;
+}
 </style>
