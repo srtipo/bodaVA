@@ -1,0 +1,16 @@
+---
+const { link , target } = Astro.props;
+---
+<a href={link} {target}>
+    <slot />
+</a>
+
+
+<style>
+    a { display: flex;
+		text-decoration: none;
+        justify-content: center;
+        align-items: center;
+	}
+	
+</style>

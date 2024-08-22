@@ -1,0 +1,17 @@
+---
+const {id} = Astro.props;
+---
+
+<dialog {id} >
+    <slot />
+</dialog>
+
+<style>
+    dialog {
+        background-color: var(--accent-color);
+        border: none;
+        border-radius: 10px;
+        width: 50%;
+    }
+
+</style>

@@ -1,8 +1,14 @@
 ---
 import Button from "../basics/button.astro";
 import CircleMarco from "../marco/circleMarco.astro";
+import InvitationModal from "../modals/InvitationModal.astro";
 
 ---
+<script>
+    document.getElementById("abrir-modal").addEventListener("click", function() {
+      (document.getElementById("invitation-modal")as any).showModal();
+    });
+</script>
 <div class = "sectiontwo" >
     <h2>¡Estan Invitad@s!</h2>
     <div class ="left">
@@ -12,7 +18,7 @@ import CircleMarco from "../marco/circleMarco.astro";
             <br>e invitacion personalizada </p>
         </p>
         <div class="button">
-            <Button>Aceptar Invitación</Button>
+            <Button id = "abrir-modal">Aceptar Invitación</Button>
         </div>
     </div>
 
@@ -22,6 +28,13 @@ import CircleMarco from "../marco/circleMarco.astro";
         </div>
         
     </div>
+    <InvitationModal id="modal">
+        <h1>Welcome!</h1>
+        <p>Click Close or press esc to close modal</p>
+        <form method="dialog">
+          <button >Close</button>
+        </form>
+    </InvitationModal>
 
 </div>
 <style>
