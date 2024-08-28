@@ -3,6 +3,12 @@ import Button from "../basics/button.astro";
 import CircleMarco from "../marco/circleMarco.astro";
 import InvitationModal from "../modals/InvitationModal.astro";
 
+interface Props {
+    family: string;
+    invitationMessage: string;
+    people: any[];
+}
+const {family ,invitationMessage ,people} = Astro.props;
 ---
 <script>
     document.getElementById("abrir-modal").addEventListener("click", function() {
@@ -12,10 +18,8 @@ import InvitationModal from "../modals/InvitationModal.astro";
 <div class = "sectiontwo" >
     <h2>¡Estan Invitad@s!</h2>
     <div class ="left">
-        <h3>Familia Guarata</h3>
-        <p>Por ser tan especial para nosotros queremos invitarlos a
-            compoartir con nosotros en este momento especial.
-            <br>e invitacion personalizada </p>
+        <h3>{family}</h3>
+        <p>{invitationMessage}</p>
         </p>
         <div class="button">
             <Button id = "abrir-modal">Aceptar Invitación</Button>

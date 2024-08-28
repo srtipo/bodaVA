@@ -1,0 +1,45 @@
+---
+import SectionFour from "../../components/section/sectionFour.astro";
+import SectionOne from "../../components/section/sectionOne.astro";
+import SectionThree from "../../components/section/sectionThree.astro";
+import SectionTwo from "../../components/section/sectionTwo.astro";
+import Layout from "../../layouts/Layout.astro";
+interface Invitation {
+	family: string;
+    uuid: string;
+    invitationMessage: string;
+    people: any[];
+    event: any;
+
+
+}
+interface Props {
+	invitation: Invitation;
+
+}
+
+export async function getStaticPaths() {
+    const data = await fetch('https://boda-api-nz7s.onrender.com/invitation').then(response => response.json());
+    return data.map(invitation => {
+        return {
+            params: {
+            id: invitation.uuid
+            },props: {
+                invitation
+            }
+        };
+    });
+}
+const {invitation } = Astro.props;
+const {family ,uuid ,invitationMessage ,people ,event}= invitation;
+console.log("uuid");
+
+---
+<Layout title="Invitation">
+    <div>
+		<SectionOne />	
+		<SectionTwo family={family} invitationMessage={invitationMessage} people={people} />
+		<SectionThree />
+		<SectionFour events={event} />
+	</div>
+</Layout>
