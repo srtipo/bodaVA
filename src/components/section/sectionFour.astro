@@ -9,7 +9,7 @@ const {events} = Astro.props;
     <h2>EVENTOS</h2>
     <div></div>
     <div class = "center">
-        {events.map((data) => <WeddingEvent description={data.name} place={data.place} date={data.date} maps={data.maps}></WeddingEvent>)}
+        {events.map((data) => <WeddingEvent description={data.name} place={data.place} date={data.date} maps={data.ubication}></WeddingEvent> <hr>)}
     </div>
     <div></div>
 </div>
@@ -38,5 +38,10 @@ const {events} = Astro.props;
         color: var(--primary-color);
         margin-block: 1%;
     }
+    hr {
+    border-style: none;
+    background-color: var(--primary-color);
+    height: 1px;
+}
 
 </style>

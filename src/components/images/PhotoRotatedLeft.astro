@@ -1,14 +1,9 @@
 ---
-interface Props {
-	rotate:string;
-    imageUrl: string;
-    alt: string;
-}
-import PhotoMontaña from './PhotoMontaña.astro';
+import PhotoAtrasAnillo from './Photo-atras-anillo.astro';
 import Pincho from './Pincho.astro';
 import Ramita from './Ramita.astro';
 
-const {rotate, imageUrl, alt} = Astro.props;
+
 ---
 <div class="container">
     
@@ -21,7 +16,7 @@ const {rotate, imageUrl, alt} = Astro.props;
         </div>
     </div>
     <div class="photo">
-        <PhotoMontaña/>
+        <PhotoAtrasAnillo />
     </div>
 </div>
 
