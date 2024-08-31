@@ -18,6 +18,14 @@ const url = `${import.meta.env.API}`
     <h3>{family}</h3>
     <p>Por confirma tu asistencia</p>
     <p><strong>No. de Invitados : </strong> {people.length}</p>
+    <div style="display: flex;">
+        <div style="min-width: 70%;">
+            <p>Nombre</p>
+        </div>
+        <div style="min-width: 25%;">
+            <p style="text-align: center;">Estado</p>
+        </div>
+    </div>
     <div>
         {people.map((person) => 
             <Person person={person} URL={url} client:load />

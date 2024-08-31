@@ -5,7 +5,6 @@ import confetti from "canvas-confetti";
 export  function Person({person,URL}) {
 
     const [status,setStatus] = useState("PENDING")
-    console.log(URL)
     const  getData = async () => {
         const response = await fetch(`${URL}/people/${person.id}`)
         const json = await response.json();
@@ -39,24 +38,29 @@ export  function Person({person,URL}) {
         })
     }
     return (
-        <div style={{display : 'grid', gridTemplateColumns: 'repeat(7, 1fr)',gap:'3%'}}> 
-            <p class="person"style={{color:'var(--primary-color)',marginBlock:'1%',gridColumn:'2 / 6'}} id={person.id}>  {person.name}</p>
-            {(status === "PENDING" || status === "REJECTED") &&
-                <div onClick={acceptInvitation} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-                    <ToAcceptButton id={person.id} > </ToAcceptButton>
-                </div>
-            }
-            {(status === "PENDING" || status === "ACCEPTED") &&
-                <div onClick={cancelInvitation} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-                    <ToCancelButton id={person.id} ></ToCancelButton>
-                </div>
-            }
-            {status === "ACCEPTED" &&
-                <p style={{color:'var(--primary-color)',marginBlock:'1%',gridColumn:'7 / 7'}} >  Aceptada</p>
-            }
-            {status === "REJECTED" &&
-                <p style={{color:'var(--primary-color)',marginBlock:'1%',gridColumn:'7 / 7'}} >  Rechazada</p>
-            }
+        <div style={{display : 'flex'}}> 
+            <div style={{display:'flex',alignItems:'center',paddingInline:'3%',minWidth:'60%'}}>
+                <p class="person"style={{color:'var(--primary-color)',alignItems:'center',marginBlock:'1%'}} id={person.id}>  {person.name}</p>
+            </div>
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center',minWidth:'35%',maxWidth:'40%'}}>
+                {(status === "PENDING" || status === "REJECTED") &&
+                    <div onClick={acceptInvitation} >
+                        <ToAcceptButton id={person.id} > </ToAcceptButton>
+                    </div>
+                }
+                {(status === "PENDING" || status === "ACCEPTED") &&
+                    <div onClick={cancelInvitation} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                        <ToCancelButton id={person.id} ></ToCancelButton>
+                    </div>
+                }
+                {status === "ACCEPTED" &&
+                    <p style={{color:'var(--primary-color)',marginBlock:'1%'}} >  Aceptada</p>
+                }
+                {status === "REJECTED" &&
+                    <p style={{color:'var(--primary-color)',marginBlock:'1%'}} >  Rechazada</p>
+                }
+            </div>
+            
         </div>
 
     );
