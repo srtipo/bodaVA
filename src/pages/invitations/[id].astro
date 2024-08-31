@@ -19,7 +19,7 @@ interface Props {
 }
 
 export async function getStaticPaths() {
-    const data = await fetch('https://boda-api-nz7s.onrender.com/invitation').then(response => response.json());
+    const data = await fetch(`${import.meta.env.API}/invitation`).then(response => response.json());	
     return data.map(invitation => {
         return {
             params: {

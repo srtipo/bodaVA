@@ -1,21 +1,34 @@
 ---
-import Button from "../basics/button.astro";
 import Modal from "../basics/modal.astro";
 import SecundButton from "../basics/secundButton.astro";
+import { Person } from "../invitedPeople/person.jsx";
+interface Props {
+    people: any[];
+    family: string;
+}
+const {people, family} = Astro.props;
+const url = `${import.meta.env.API}`
 ---
-
+<script>
+    document.getElementById("cerrar-modal").addEventListener("click", function() {
+        (document.getElementById("invitation-modal")as any).close();
+    });
+</script>
 <Modal id="invitation-modal">
-    <h2>Welcome!</h2>
+    <h3>{family}</h3>
     <p>Por confirma tu asistencia</p>
-    <p><strong>Invitados : </strong> 4</p>
-    <form method="dialog">
-        <input type="number" id="tentacles" name="tentacles" min="1" max="4" />
+    <p><strong>No. de Invitados : </strong> {people.length}</p>
+    <div>
+        {people.map((person) => 
+            <Person person={person} URL={url} client:load />
+        )}
+    </div>
+    
+
         <div class="buttons">
-            <Button type="submit">aceptar</Button>
-            <SecundButton >cerrar</SecundButton>
+            <SecundButton id="cerrar-modal">cerrar</SecundButton>
         </div>
         
-    </form>
 </Modal>
 
 <style>
@@ -23,7 +36,7 @@ import SecundButton from "../basics/secundButton.astro";
         width: 20%;
         height: 30px;
     }
-    h2 {
+    h3 {
         text-align: center;
         color: var(--primary-color);
         margin-block: 1%;
@@ -36,6 +49,17 @@ import SecundButton from "../basics/secundButton.astro";
     }
     .buttons {
         display: flex;
-        justify-content: space-between;
+        justify-content: right;
+    }
+    .invitation-people {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3%;
+    }
+    .person {
+        color: var(--primary-color);
+        margin-block: 1%;
+        grid-column: 1 / 6;
+        
     }
 </style>

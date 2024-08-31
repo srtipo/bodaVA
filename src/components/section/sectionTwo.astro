@@ -13,6 +13,7 @@ const {family ,invitationMessage ,people} = Astro.props;
 <script>
     document.getElementById("abrir-modal").addEventListener("click", function() {
       (document.getElementById("invitation-modal")as any).showModal();
+      new CustomEvent('openModal');
     });
 </script>
 <div class = "sectiontwo" >
@@ -32,9 +33,7 @@ const {family ,invitationMessage ,people} = Astro.props;
         </div>
         
     </div>
-    <InvitationModal id="modal">
-        <h1>Welcome!</h1>
-        <p>Click Close or press esc to close modal</p>
+    <InvitationModal  family={family}, people={people} >
         <form method="dialog">
           <button >Close</button>
         </form>
