@@ -4,6 +4,7 @@ import '@fontsource-variable/dancing-script';
 import '@fontsource/pacifico';
 import '@fontsource/sacramento';
 import Title from '../components/Title.astro';
+import Footer from '../components/section/footer.astro';
 interface Props {
 	title: string;
 }
@@ -24,6 +25,7 @@ const { title } = Astro.props;
 	<body>
 		<Title> Boda Victor y Andrea</Title>
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>

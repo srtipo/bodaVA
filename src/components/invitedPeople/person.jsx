@@ -40,7 +40,7 @@ export  function Person({person,URL}) {
     return (
         <div style={{display : 'flex',marginBlock:'5%'}}>
             <div style={{display:'flex',alignItems:'center',paddingInline:'3%',minWidth:'60%'}}>
-                <p class="person"style={{color:'var(--primary-color)',alignItems:'center',marginBlock:'1%'}} id={person.id}>  {person.name}</p>
+                <p style={{color:'var(--primary-color)',alignItems:'center',marginBlock:'1%'}} id={person.id}>  {person.name}</p>
             </div>
             <div style={{display:'flex',justifyContent:'center',alignItems:'center',minWidth:'35%',maxWidth:'40%',flexDirection:'column'}}>
                 {status === "ACCEPTED" &&

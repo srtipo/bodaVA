@@ -9,7 +9,13 @@ const {events} = Astro.props;
     <h2>EVENTOS</h2>
     <div></div>
     <div class = "center">
-        {events.map((data) => <WeddingEvent description={data.name} place={data.place} date={data.date} maps={data.ubication}></WeddingEvent> <hr>)}
+        {events.map((data) =>
+            <hr/>
+            <WeddingEvent description={data.name} place={data.place} date={data.date} maps={data.ubication}>
+
+            </WeddingEvent> 
+
+        )}  
     </div>
     <div></div>
 </div>

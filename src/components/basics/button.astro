@@ -3,7 +3,10 @@ import '@fontsource/sacramento';
 const {id} = Astro.props;
 ---
 <button {id}>
-    <slot />
+    <strong>
+        <slot />
+    </strong>
+    
 </button>
 
 <style>
@@ -26,5 +29,8 @@ const {id} = Astro.props;
         transform: perspective(2px) scale(0.9);
         transition: transform 0.2s;
         cursor: pointer;
+    }
+    strong {
+        text-shadow: 1px 1px 1px rgb(85, 84, 84);
     }
 </style>
