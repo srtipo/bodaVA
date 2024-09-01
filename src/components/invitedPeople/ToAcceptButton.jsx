@@ -1,7 +1,7 @@
 export function ToAcceptButton({id}) {
     return (
-        <button data-invitation={id}>
-            <svg fill="#F47D42" version="1.1" id="Layer_1" 
+        <button data-invitation={id} style={{backgroundColor:'var(--primary-color)',borderRadius:'20%'}}>
+            <svg fill="var(--secondary-color)" version="1.1" id="Layer_1"
             width="20px" height="20px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
                 <path d="M88.04,30.319L75.124,17.401c-0.454-0.453-1.067-0.709-1.71-0.709c-0.642,0-1.256,0.256-1.709,0.709L37.392,51.714
                 l-9.094-9.093c-0.945-0.944-2.474-0.944-3.419,0L11.96,55.539c-0.453,0.453-0.709,1.068-0.709,1.709c0,0.641,0.256,1.256,0.709,1.71

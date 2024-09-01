@@ -38,27 +38,35 @@ export  function Person({person,URL}) {
         })
     }
     return (
-        <div style={{display : 'flex'}}> 
+        <div style={{display : 'flex',marginBlock:'5%'}}>
             <div style={{display:'flex',alignItems:'center',paddingInline:'3%',minWidth:'60%'}}>
                 <p class="person"style={{color:'var(--primary-color)',alignItems:'center',marginBlock:'1%'}} id={person.id}>  {person.name}</p>
             </div>
-            <div style={{display:'flex',justifyContent:'center',alignItems:'center',minWidth:'35%',maxWidth:'40%'}}>
-                {(status === "PENDING" || status === "REJECTED") &&
-                    <div onClick={acceptInvitation} >
-                        <ToAcceptButton id={person.id} > </ToAcceptButton>
-                    </div>
-                }
-                {(status === "PENDING" || status === "ACCEPTED") &&
-                    <div onClick={cancelInvitation} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
-                        <ToCancelButton id={person.id} ></ToCancelButton>
-                    </div>
-                }
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center',minWidth:'35%',maxWidth:'40%',flexDirection:'column'}}>
                 {status === "ACCEPTED" &&
-                    <p style={{color:'var(--primary-color)',marginBlock:'1%'}} >  Aceptada</p>
+                    <p style={{fontSize:'0.7em',lineHeight:'1em' ,color:'var(--primary-color)',marginBlock:'1%'}} >  Aceptada</p>
                 }
                 {status === "REJECTED" &&
-                    <p style={{color:'var(--primary-color)',marginBlock:'1%'}} >  Rechazada</p>
+                    <p style={{fontSize:'0.7em',lineHeight:'1em' , color:'var(--black-color)',marginBlock:'1%'}} >  Rechazada</p>
                 }
+                {status === "PENDING" &&
+                    <p style={{fontSize:'0.7em',lineHeight:'1em' , color:'var(--black-color)',marginBlock:'1%'}} > Penddiente</p>
+                }
+                <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
+                    {(status === "PENDING" || status === "REJECTED") &&
+                        <div style={{display:'flex'}} onClick={acceptInvitation} >
+                            <ToAcceptButton id={person.id} > </ToAcceptButton>
+                        </div>
+                    }
+                    {(status === "PENDING" || status === "ACCEPTED") &&
+                        <div onClick={cancelInvitation} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                            <ToCancelButton id={person.id} ></ToCancelButton>
+                        </div>
+                    }
+
+                </div>
+                
+                
             </div>
             
         </div>
