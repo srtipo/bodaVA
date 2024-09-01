@@ -52,18 +52,13 @@ export  function Person({person,URL}) {
                 {status === "PENDING" &&
                     <p style={{fontSize:'0.7em',lineHeight:'1em' , color:'var(--black-color)',marginBlock:'1%'}} > Penddiente</p>
                 }
-                <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
-                    {(status === "PENDING" || status === "REJECTED") &&
+                <div style={{display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row',gap:'3%'}}>
                         <div style={{display:'flex'}} onClick={acceptInvitation} >
                             <ToAcceptButton id={person.id} > </ToAcceptButton>
                         </div>
-                    }
-                    {(status === "PENDING" || status === "ACCEPTED") &&
                         <div onClick={cancelInvitation} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                             <ToCancelButton id={person.id} ></ToCancelButton>
                         </div>
-                    }
-
                 </div>
                 
                 
