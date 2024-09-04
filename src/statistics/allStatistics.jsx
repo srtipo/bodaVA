@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Statistic } from "./statistic.jsx";
-const { Accordion, AccordionTab } = 'primereact/accordion';
+import { Accordion, AccordionTab } from 'primereact/accordion';
 
 
 export   function AllStatistics({url}) {
