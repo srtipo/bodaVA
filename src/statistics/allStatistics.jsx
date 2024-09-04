@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { Statistic } from "./statistic.jsx";
-import React from 'react';
-import { Accordion, AccordionTab } from 'primereact/accordion';
+const { Accordion, AccordionTab } = 'primereact/accordion';
+
 
 export   function AllStatistics({url}) {
     const [isLoading, setIsLoading] = useState(true);
