@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { AllStatistics } from '../../statistics/allStatistics.jsx';
+interface Props {
+	statistics:{
+        total: number;
+        list: any[];
+    }
+
+}
+interface Props {
+	SingleStatistics:{
+        total: number;
+        list: any[];
+    }
+
+}
+const {statistics} = Astro.props;
+const url = `${import.meta.env.API}`
+---
+
+
+<Layout title="Estadísticas">
+    <div style="background-color: var(--secondary-color); display: grid;
+        grid-template-columns: repeat(5, 1fr); padding: 2%;">
+        <h1>Estadísticas</h1>
+        <div class="container">
+            <AllStatistics {url} client:visible />
+        </div>
+        
+        
+    </div>
+
+
+    
+</Layout>
+<style>
+    .container {
+        grid-column: 2 / 5;
+    }
+    h1 {
+        text-align: center;
+        grid-column: 2 / 5;
+        margin: 4%;
+        color: var(--primary-color);
+    }
+</style>
