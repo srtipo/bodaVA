@@ -14,8 +14,8 @@ export   function AllStatistics({url}) {
       .then((response) => response.json())
       .then((statistics) => {
         setPending(statistics.pending);
-        setRejected(statistics.accepted);
-        setAccepted(statistics.rejected);
+        setRejected(statistics.rejected);
+        setAccepted(statistics.accepted);
         setIsLoading(false);
       });
   }, []);
